@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informe Final - Telecom X II</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f9fb;
+      color: #1f1f1f;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2, h3 {
+      color: #12343b;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 2rem;
+      border-bottom: 3px solid #2ec4b6;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin-top: 32px;
+      color: #1d5c63;
+    }
+
+    h3 {
+      margin-top: 22px;
+      color: #2a7f86;
+    }
+
+    p {
+      margin: 12px 0;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background-color: #d9f0ec;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .box {
+      background-color: #f1f7f8;
+      border-left: 5px solid #2ec4b6;
+      padding: 16px 18px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #d9d9d9;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .tag {
+      display: inline-block;
+      background-color: #eef2f5;
+      color: #333;
+      padding: 6px 10px;
+      border-radius: 20px;
+      margin: 4px 6px 0 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Informe Final — Telecom X Parte II</h1>
+
+    <p>
+      Este proyecto tuvo como objetivo desarrollar modelos predictivos capaces de identificar clientes con alta probabilidad de cancelar el servicio (<strong>churn</strong>) en Telecom X.
+    </p>
+
+    <div class="box">
+      <strong>Resultado principal:</strong> el modelo con mejor desempeño fue
+      <span class="highlight">Regresión Logística</span>,
+      con un <span class="highlight">F1-score cercano a 0.59</span>.
+    </div>
+
+    <h2>1. Modelos evaluados</h2>
+    <p>Se entrenaron tres modelos de clasificación:</p>
+    <ul>
+      <li>Dummy Classifier (baseline)</li>
+      <li>Regresión Logística</li>
+      <li>Random Forest</li>
+    </ul>
+
+    <p>
+      El Dummy Classifier se utilizó como línea base para comprobar que los modelos predictivos realmente aprendieran patrones relevantes del dataset.
+    </p>
+
+    <h2>2. Desempeño de los modelos</h2>
+    <p>
+      La comparación de métricas mostró que la <strong>Regresión Logística</strong> obtuvo el mejor equilibrio entre precisión y capacidad predictiva, superando tanto al modelo baseline como a Random Forest.
+    </p>
+
+    <p>En términos generales, los resultados indican que:</p>
+    <ul>
+      <li>la accuracy se acerca al 80%</li>
+      <li>la precision ronda 0.63</li>
+      <li>el recall ronda 0.54</li>
+      <li>el F1-score fue superior en Regresión Logística</li>
+    </ul>
+
+    <p>
+      Esto demuestra que el modelo logra capturar patrones relevantes asociados a la cancelación de clientes.
+    </p>
+
+    <h2>3. Factores más influyentes en la cancelación</h2>
+    <p>
+      A partir del análisis exploratorio, las correlaciones y la importancia de variables en los modelos, se identificaron los principales factores asociados al churn:
+    </p>
+
+    <ul>
+      <li><strong>Menor antigüedad del cliente:</strong> los clientes más nuevos presentan mayor probabilidad de cancelar.</li>
+      <li><strong>Contratos mensuales:</strong> muestran más churn que los contratos anuales o bianuales.</li>
+      <li><strong>Cargos mensuales altos:</strong> se asocian con una mayor tendencia a cancelar.</li>
+      <li><strong>Menor uso de servicios adicionales:</strong> los clientes menos integrados al servicio tienden a abandonar con más frecuencia.</li>
+    </ul>
+
+    <h2>4. Interpretación del análisis</h2>
+    <p>
+      Los resultados sugieren que la cancelación no ocurre al azar, sino que responde a patrones claros relacionados con:
+    </p>
+
+    <div>
+      <span class="tag">Compromiso del cliente</span>
+      <span class="tag">Costo percibido</span>
+      <span class="tag">Antigüedad</span>
+      <span class="tag">Uso de servicios</span>
+    </div>
+
+    <p>
+      En particular, los clientes nuevos, con contratos más flexibles y pagos mensuales más altos, representan un segmento de mayor riesgo.
+    </p>
+
+    <h2>5. Estrategias de retención recomendadas</h2>
+
+    <h3>Retención temprana</h3>
+    <p>
+      Implementar acciones durante los primeros meses del cliente, como onboarding, seguimiento de satisfacción y beneficios iniciales.
+    </p>
+
+    <h3>Promoción de contratos de mayor duración</h3>
+    <p>
+      Incentivar contratos anuales o bianuales mediante descuentos y beneficios adicionales para aumentar el compromiso del cliente.
+    </p>
+
+    <h3>Mejora del valor percibido</h3>
+    <p>
+      Reforzar la propuesta de valor del servicio mediante mejoras en calidad, personalización de ofertas y paquetes más atractivos.
+    </p>
+
+    <h3>Impulso de servicios complementarios</h3>
+    <p>
+      Fomentar el uso de servicios adicionales para aumentar la integración del cliente con la empresa y reducir la probabilidad de abandono.
+    </p>
+
+    <h2>6. Conclusión</h2>
+    <p>
+      El proyecto permitió construir modelos predictivos útiles para anticipar la cancelación de clientes y, al mismo tiempo, identificar factores clave para orientar decisiones estratégicas.
+    </p>
+
+    <p>
+      Más allá del desempeño técnico del modelo, el principal valor del análisis está en su capacidad de traducirse en acciones concretas de negocio para reducir el churn y fortalecer la fidelización.
+    </p>
+
+    <div class="footer">
+      <strong>Autor:</strong> Randy Roco Mellado<br>
+      Proyecto: Telecom X II — Predicción de Cancelación de Clientes
+    </div>
+  </div>
+</body>
+</html>
